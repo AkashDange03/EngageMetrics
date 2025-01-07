@@ -44,36 +44,18 @@ const ChatClient = ({ isExpanded, setIsExpanded }) => {
     setError(null);
     setMessages((prev) => [...prev, { text: inputMessage, type: "user" }]);
 
-    const { data } = await axios.post(
-      "https://api.langflow.astra.datastax.com/lf/56dfbd7b-ecff-4927-b7f5-05c44871f7f1/api/v1/run/507b955a-c503-42d5-9d2e-279e40ab2be2?stream=false",
-      {
-        input_value: inputMessage,
-        output_type: "chat",
-        input_type: "chat",
-        tweaks: {
-          "ParseData-bU2Lk": {},
-          "SplitText-s45X9": {},
-          "OpenAIModel-Bunci": {},
-          "ChatOutput-8sI0F": {},
-          "AstraDB-66x6b": {},
-          "File-j3YRd": {},
-          "ChatInput-iAwEu": {},
-          "CombineText-1kBZ6": {},
-          "TextInput-upHmt": {},
-        },
-      },
-      {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${import.meta.env.VITE_APPLICATION_TOKEN}`,
-        },
-      }
-    );
+     const response = await axios("http://localhost:3000/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ input_value: inputMessage}),
+    });
 
-    const message = data.outputs[0]?.outputs[0]?.results?.message?.text;
-    if (!message) throw new Error("Invalid response format");
+    console.log(response);
 
-    console.log(message);
+    if (!response.statusText) throw new Error("Failed to send message");
+
+    const message = response.data;
+    
     setMessages((prev) => [...prev, { text: message, type: "bot" }]);
     setInputMessage("");
   } catch (err) {
