@@ -44,7 +44,7 @@ const ChatClient = ({ isExpanded, setIsExpanded }) => {
     setError(null);
     setMessages((prev) => [...prev, { text: inputMessage, type: "user" }]);
 
-     const response = await axios(`${import.meta.env.VITE_PROXY}/chat1`, {
+     const response = await axios(`${import.meta.env.VITE_PROXY}/chat`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ input_value: inputMessage}),
