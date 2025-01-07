@@ -45,7 +45,7 @@ const ChatClient = ({ isExpanded, setIsExpanded }) => {
     setMessages((prev) => [...prev, { text: inputMessage, type: "user" }]);
 
     const { data } = await axios.post(
-      "/api/lf/56dfbd7b-ecff-4927-b7f5-05c44871f7f1/api/v1/run/507b955a-c503-42d5-9d2e-279e40ab2be2?stream=false",
+      "https://api.langflow.astra.datastax.com/lf/56dfbd7b-ecff-4927-b7f5-05c44871f7f1/api/v1/run/507b955a-c503-42d5-9d2e-279e40ab2be2?stream=false",
       {
         input_value: inputMessage,
         output_type: "chat",
