@@ -44,7 +44,7 @@ const ChatClient = ({ isExpanded, setIsExpanded }) => {
     setError(null);
     setMessages((prev) => [...prev, { text: inputMessage, type: "user" }]);
 
-     const response = await axios("http://localhost:3000/chat", {
+     const response = await axios(`${import.meta.env.VITE_PROXY}/chat1`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ input_value: inputMessage}),
@@ -52,7 +52,7 @@ const ChatClient = ({ isExpanded, setIsExpanded }) => {
 
     console.log(response);
 
-    if (!response.statusText) throw new Error("Failed to send message");
+    if (response.status!==200) throw new Error("Failed to send message");
 
     const message = response.data;
     
