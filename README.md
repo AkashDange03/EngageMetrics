@@ -17,7 +17,7 @@
 ## Deployment Overview
 
 ### Live Application
-- **URL**: [engage-mertics.vercel.app](engage-mertics.vercel.app)
+- **URL**: [engage-mertics.vercel.app](www.engage-mertics.vercel.app)
 - **Platform**: Render
 - **Status**: Active
 
