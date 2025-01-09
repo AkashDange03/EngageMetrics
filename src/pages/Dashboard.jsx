@@ -13,8 +13,10 @@ import {
   Pie,
   Cell,
 } from 'recharts';
+import ChatClient from './ChatClient';
+import Footer from '../components/layout/Footer'
 
-const Dashboard = () => {
+const Dashboard = () => {che
   const [data, setData] = useState([]);
   const [columns, setColumns] = useState([]);
   const [selectedTypes, setSelectedTypes] = useState('all');
@@ -64,6 +66,14 @@ const Dashboard = () => {
   }));
 
   const colors = ['#22C55E', '#16A34A', '#A7F3D0', '#4BC0C0', '#9966FF'];
+
+  const [chatExpanded, setChatExpanded] = useState(false);
+
+  
+  // Function to handle AI button click
+  const handleAiButtonClick = () => {
+    setChatExpanded(true);
+  };
 
   return (
     <div className="h-screen flex flex-col bg-gradient-to-r from-green-100 to-green-50 text-gray-800">
@@ -182,7 +192,12 @@ const Dashboard = () => {
             </LineChart>
           </ResponsiveContainer>
         </div>
+        <ChatClient
+          isExpanded={chatExpanded}
+          setIsExpanded={setChatExpanded}
+        />
       </main>
+      <Footer/>
     </div>
   );
 };
