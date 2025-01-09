@@ -16,7 +16,7 @@ import {
 import ChatClient from './ChatClient';
 import Footer from '../components/layout/Footer'
 
-const Dashboard = () => {che
+const Dashboard = () => {
   const [data, setData] = useState([]);
   const [columns, setColumns] = useState([]);
   const [selectedTypes, setSelectedTypes] = useState('all');
