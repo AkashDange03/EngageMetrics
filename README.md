@@ -1,4 +1,4 @@
-# Social Media Analytics Platform - Insightly
+# Social Media Analytics Platform - EngageMetrics
 ## Complete Technical Documentation
 
 ### Table of Contents
@@ -47,7 +47,6 @@ To enhance the technical documentation of the Social Media Analytics Platform, h
 
 - **Backend Structure**
   - **Proxy Server**
-    - Handles WebSocket connections
     - Manages client requests and responses
     - Streams data in real-time
     - Provides error handling mechanisms
