@@ -14,10 +14,6 @@
 
 ---
 
-It appears that the URL [www.engage-mertics.vercel.app](http://www.engage-mertics.vercel.app) is currently inaccessible. Please verify the URL for any typographical errors. If the issue persists, ensure that the deployment on Vercel is active and correctly configured.
-
-To enhance the technical documentation of the Social Media Analytics Platform, here are additional details:
-
 **Deployment Overview**
 
 - **Live Application**
