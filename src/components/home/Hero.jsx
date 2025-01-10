@@ -63,7 +63,7 @@ const Hero = () => {
                 </Link>
 
                 <Link
-                  to=""
+                  to="https://www.youtube.com/watch?v=StugxZmy3Rw"
                   className="inline-flex items-center justify-center gap-2 bg-white text-primary-600 px-8 py-4 rounded-lg hover:bg-primary-50 transition-colors duration-300 border border-primary-200">
                   View Demo
                   <ChartBar size={20} />
